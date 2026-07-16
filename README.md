@@ -85,6 +85,57 @@ The verifier creates `build/Project Breakwater-macOS.zip`, but build output is d
 | `tests/` | Gameplay and end-to-end integration suites |
 | `scripts/verify_breakwater.sh` | Full headless test/export/sign/archive verification |
 
+## Original `/goal` build prompt
+
+Preserved verbatim for the studio build video and future reference.
+
+<details>
+<summary>Expand the original Project Breakwater prompt</summary>
+
+```text
+/goal Build and finish “Project Breakwater,” an original, polished offline 3D arena FPS in this existing empty Git repository using Godot 4.7 and GDScript. If Godot is missing, install it with `brew install --cask godot`. Target macOS on this Apple M5 Mac, supporting keyboard/mouse and controller at 1920×1080 and a stable 60 FPS.
+
+Create a complete player journey: title screen → main menu → Play → convincing “Practice Matchmaking” search/found/loading sequence → 8-combatant free-for-all with the player and 7 bots → victory or defeat when anyone reaches 30 kills → results, rematch, or return to menu. Clearly identify matchmaking as an offline simulation; do not implement networking.
+
+GAMEPLAY
+- Deliver responsive modern military-arcade FPS movement and weapon handling: movement, sprint, jump, crouch, slide, aim-down-sights, hip fire, recoil, reload, melee, weapon swapping/pickups, and grenade throwing.
+- Create six distinct original weapons: assault rifle, SMG, pump shotgun, DMR, LMG, and pistol. Balance damage, range, fire rate, spread, recoil, magazines, reloads, and pickups.
+- Include headshots, damage falloff, regenerating health, hit/kill markers, muzzle flashes, impacts, audio, ammo management, death, respawning, spawn protection, and satisfying camera/weapon feedback.
+- Add frag, flash, and concussion grenades that visibly affect players and AI.
+- Add selectable loadouts, 3 original player skins, and 3 visibly different weapon camos.
+- Build a complete HUD with health/damage feedback, ammo, equipment, crosshair, minimap/compass, kill feed, leader, score-to-30, scoreboard, and pause menu.
+
+BOTS AND MATCH
+Bots must navigate, patrol, perceive and select any opponent, fight both the player and one another, use different weapons and grenades, collect pickups, respawn, and avoid unsafe spawns. They must keep fighting and scoring if the player remains idle. The player wins at exactly 30 kills; if a bot reaches 30 first, show defeat.
+
+MAP
+Build one polished original map called “Breakwater Station”: a sunlit near-future coastal research base designed for 8-player FFA. Include three interconnected combat routes, interiors and exteriors, vertical flanks, cover, recognizable landmarks, safe spawn zones, ocean views, vegetation, atmospheric fog, reflections, strong lighting, and optimization. Do not reproduce any existing Call of Duty map.
+
+MENUS AND SETTINGS
+Implement polished home, play/matchmaking, loadout, skins, settings, controls, credits, loading, pause, and post-match screens. Settings must function, persist between launches, and include:
+- Master, music, SFX, and UI volume
+- Mouse, ADS, and controller sensitivity
+- Controller dead zone, vibration, invert-Y, and input rebinding
+- FOV, fullscreen/windowed mode, resolution scale, graphics presets, and VSync
+- Camera-shake, hit-marker, and crosshair options
+
+Use coherent original UI, music, sound effects, VFX, transitions, loading feedback, models, textures, and environmental art. Use only original, procedurally generated, AI-generated, or verified redistributable free assets. Do not copy Call of Duty branding, names, characters, maps, UI, sounds, weapon models, textures, or other protected content. Record all external assets and licenses in `ATTRIBUTIONS.md`; use no paid assets.
+
+REPOSITORY AND ENGINEERING
+Keep the existing `.git` repository; do not create a nested repository or reinitialize it. Add an appropriate `.gitignore` and a complete README covering installation, launching, controls, architecture, settings, tests, and known limitations. Use modular, data-driven Godot scenes and resources. Commit meaningful milestones and finish with a clean working tree. Work autonomously through setup, combat, bots, match rules, map, content, menus, settings, polish, and QA. Do not stop at an unpolished graybox while safe improvements remain.
+
+DEFINITION OF DONE
+- Run Godot import and script-parse checks plus automated tests for scoring, bot combat, damage/death/respawn, weapon pickups, grenades, controls, and settings persistence.
+- Launch and verify the complete flow using keyboard/mouse and controller.
+- Observe an unattended 5-minute match and confirm bots kill and score against one another.
+- Verify player victory at 30, bot victory at 30, results, rematch, and return-to-menu behavior without errors or crashes.
+- Profile at 1080p and fix material regressions until gameplay maintains a stable 60 FPS on this Mac.
+- Capture screenshots of menus, the map, combat, and results.
+- Finish by reporting exact run commands, test and performance results, completed features, known limitations, commit summary, and final Git status.
+```
+
+</details>
+
 ## Build notes and honest limitations
 
 - The project favors cohesive stylized procedural geometry over external high-poly character and weapon packs.
