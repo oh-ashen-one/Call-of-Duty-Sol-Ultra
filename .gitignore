@@ -1,0 +1,11 @@
+# Godot-generated state
+.godot/
+*.tmp
+
+# Builds and local captures
+build/
+exports/
+logs/
+
+# macOS
+.DS_Store
